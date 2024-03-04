@@ -20,7 +20,6 @@ private:
 	std::vector<std::vector<float>> m_data;
 	float m_domainWidth;
 	int m_time = 0;
-	Domain m_domain;
 public:
 	Renderer(GLuint width, GLuint height, const Domain& D);
 	void LinePlot();
@@ -28,7 +27,7 @@ public:
 	~Renderer();
 };
 
-Renderer::Renderer(GLuint width, GLuint height, const Domain& D) : m_width(width), m_height(height), m_domain(D)
+Renderer::Renderer(GLuint width, GLuint height, const Domain& D) : m_width(width), m_height(height)
 {
 	m_data.resize(D.TimeSteps());
 	for (auto& xGrid : m_data)
